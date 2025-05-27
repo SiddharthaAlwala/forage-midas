@@ -4,10 +4,14 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 @SpringBootTest
 class TaskOneTests {
     static final Logger logger = LoggerFactory.getLogger(TaskOneTests.class);
+
+    @MockBean
+    private KafkaProducer kafkaProducer;
 
     @Test
     void task_one_verifier() throws InterruptedException {
